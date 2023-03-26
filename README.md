@@ -1,3 +1,25 @@
+  <p align="center">
+    <!--<a href="https://github.com/kitravee/openluncher/actions">
+      <img alt="Tests Passing" src="https://github.com/kitravee/openluncher-t3/workflows/nx-ci/badge.svg" />
+    </a> -->
+    <a href="https://github.com/kitravee/openluncher/graphs/contributors">
+      <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/kitravee/openluncher-t3" />
+    </a>
+    <a href="https://github.com/kitravee/openluncher/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/kitravee/openluncher-t3?color=0088ff" />
+    </a>
+    <a href="https://github.com/kitravee/openluncher/pulls">
+      <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/kitravee/openluncher-t3?color=0088ff" />
+    </a>
+    <br />
+    <br />
+  </p>
+
+<p align="center">
+ <img width="180" src="https://user-images.githubusercontent.com/50334192/227771574-e9db73fd-ee2a-428c-b324-a41bdb8ef110.svg">
+</p>
+
+
 # Create T3 App
 
 This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
@@ -26,3 +48,38 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+
+##  Commit Convention
+#### the commit conventions
+
+Real world examples can look like this:
+
+```
+chore: run tests on travis ci
+```
+
+```
+fix(server): send cors headers
+```
+
+```
+feat(blog): add comment section
+```
+
+Common types according to [commitlint-config-conventional (based on the Angular convention)](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) can be:
+
+- `build`
+- `chore`
+- `ci`
+- `docs`
+- `feat`
+- `fix`
+- `perf`
+- `refactor`
+- `revert`
+- `style`
+- `test`
+
+These can be modified by [your own configuration](#config).
+
