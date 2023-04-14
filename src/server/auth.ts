@@ -1,3 +1,4 @@
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { type GetServerSidePropsContext } from "next";
 import {
   getServerSession,
@@ -6,7 +7,7 @@ import {
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+
 import { env } from "~/env.mjs";
 import { prisma } from "~/server/db";
 
@@ -39,11 +40,12 @@ declare module "next-auth" {
 export const authOptions: NextAuthOptions = {
   callbacks: {
     session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
+      const currentSession = session;
+      if (currentSession.user) {
+        currentSession.user.id = user.id;
         // session.user.role = user.role; <-- put other properties on the session here
       }
-      return session;
+      return currentSession;
     },
   },
   adapter: PrismaAdapter(prisma),
@@ -76,6 +78,4 @@ export const authOptions: NextAuthOptions = {
 export const getServerAuthSession = (ctx: {
   req: GetServerSidePropsContext["req"];
   res: GetServerSidePropsContext["res"];
-}) => {
-  return getServerSession(ctx.req, ctx.res, authOptions);
-};
+}) => getServerSession(ctx.req, ctx.res, authOptions);
