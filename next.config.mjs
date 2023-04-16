@@ -24,5 +24,6 @@ const config = {
   // experimental: {
   //   appDir: true,
   // }
+  images: {domains:['images.unsplash.com']}
 };
 export default config;
